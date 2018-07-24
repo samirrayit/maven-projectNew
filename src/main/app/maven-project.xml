@@ -20,7 +20,6 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
     <flow name="mavenFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" allowedMethods="GET" doc:name="HTTP"/>
         <set-payload value="#['Hello Maven']" doc:name="Set Payload"/>
-        <logger level="INFO" doc:name="Logger"/>
     </flow>
     <flow name="logFlights">
         <jms:inbound-endpoint queue="flights" connector-ref="Active_MQ" doc:name="JMS - Receive"/>
